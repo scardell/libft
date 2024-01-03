@@ -3,12 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: scardell <scardell@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: scardell <scardell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 12:35:52 by scardell          #+#    #+#             */
-/*   Updated: 2023/12/27 17:59:05 by scardell         ###   ########.fr       */
+/*   Updated: 2024/01/03 13:20:11 by scardell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef LIBFT_H
+#define LIBFT_H
 
 #include <unistd.h>
 #include <stdio.h>
@@ -39,3 +42,5 @@ int		ft_atoi(const char *str);
 void	*ft_calloc(size_t count, size_t size);
 char	*ft_strdup(const char *s1);
 char	*ft_sudstr(char const *s, unsigned int start, size_t len);
+
+#endif
