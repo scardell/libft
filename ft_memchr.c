@@ -25,3 +25,19 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (NULL);
 }
+/*int main() {
+    const char str[] = "This is a test string"; // Cadena de prueba
+    int search_char = 'a'; // Carácter a buscar en la cadena
+    size_t search_len = 10; // Número de bytes a buscar
+
+    void *result = ft_memchr(str, search_char, search_len); 
+	// Llamada a la función
+
+    if (result != NULL) {
+        printf("posici %ld\n", (unsigned char *)result - (unsigned char *)str);
+    } else {
+        printf("Caracter no encontrado\n");
+    }
+
+    return 0;
+}*/
