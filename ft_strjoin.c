@@ -1,38 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: scardell <scardell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/20 12:18:48 by scardell          #+#    #+#             */
-/*   Updated: 2024/01/08 10:00:03 by scardell         ###   ########.fr       */
+/*   Created: 2024/01/08 12:35:20 by scardell          #+#    #+#             */
+/*   Updated: 2024/01/08 13:04:23 by scardell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int	i;
-	int	sign;
-	int	nb;
+	size_t	i;
+	char	*strb;
 
+	if (!s1 || !s2)
+		return (NULL);
+	strb = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	if (!strb)
+		return (NULL);
 	i = 0;
-	sign = 1;
-	nb = 0;
-	while (str[i] == ' ' || str[i] == '\n' || str[i] == '\t' || str[i] == '\f'
-		|| str[i] == '\v' || str[i] == '\r')
-		i++;
-	if (str[i] == '-')
-		sign = -1;
-	if (str[i] == '-' || str[i] == '+')
-		++i;
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		nb = (nb * 10) + (str[i] - '0');
-		i++;
-	}
-	nb *= sign;
-	return (nb);
+	while (*s1)
+		strb[i++] = *s1++;
+	while (*s2)
+		strb[i++] = *s2++;
+	strb[i] = '\0';
+	return (strb);
 }

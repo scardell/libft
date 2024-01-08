@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: scardell <scardell@student.42.fr>          +#+  +:+       +#+        */
+/*   By: scardell <scardell@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 13:25:43 by scardell          #+#    #+#             */
-/*   Updated: 2024/01/03 13:57:49 by scardell         ###   ########.fr       */
+/*   Updated: 2023/12/12 14:55:19 by scardell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,3 @@ int	main(void)
 		printf("El caracter no pertenece al codigo ascii.\n");
 	return (0);
 }*/
-//
-// En resumen, la función ft_isascii verifica si el valor entero c se encuentra
-// dentro del rango de caracteres ASCII estándar (0-127) y devuelve 1 si es así,
-// o 0 si no lo es. Esta función puede ser útil para verificar si un carácter
-// o valor entero específico es un carácter ASCII válido.

@@ -32,15 +32,3 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 		++src_len;
 	return (dst_len + src_len);
 }
-/*int main() {
-    char dst[20] = "Hello, "; // Cadena de destino inicial
-    char src[] = "world!"; // Cadena de origen
-
-    size_t result_len = ft_strlcat(dst, src, sizeof(dst)); 
-	// Concatenación utilizando la función
-
-    printf("Cadena concatenada: %s\n", dst);
-    printf("Longitud de la cadena concatenada: %zu\n", result_len);
-
-    return 0;
-}*/
