@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: scardell <scardell@student.42.fr>          +#+  +:+       +#+         #
+#    By: scardell <scardell@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/15 13:29:31 by scardell          #+#    #+#              #
-#    Updated: 2024/01/08 14:01:09 by scardell         ###   ########.fr        #
+#    Updated: 2024/01/15 14:17:21 by scardell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,13 +15,13 @@ SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 	   ft_strncmp.c	ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c \
 	   ft_strlcpy.c ft_strlcat.c ft_memchr.c ft_memcmp.c ft_strnstr.c \
 	   ft_atoi.c ft_calloc.c ft_strdup.c ft_substr.c ft_strjoin.c \
-	   ft_strtrim.c #ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c \
-	   #ft_putchar_fd.c ft_purstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
+	   ft_strtrim.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c\
+	   ft_putnbr_fd.c ft_striteri.c ft_strmapi.c ft_split.c ft_itoa.c
 OBJS = $(SRCS:.c=.o)
 
-#BONUS =	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
-#			ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c \
-#			ft_lstmap.c
+BONUS =	ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c \
+		ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c \
+		ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c 
 BONUS_OBJS = $(BONUS:.c=.o)
 
 CC = gcc
@@ -32,8 +32,8 @@ NAME = libft.a
 
 all:	$(NAME)
 
-$(NAME):	$(OBJS)
-			@ar rcs $(NAME) $(OBJS)
+$(NAME):	$(OBJS) $(BONUS_OBJS)
+			@ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
 
 $(OBJS) $(BONUS_OBJS): %.o: %.c
 			$(CC) $(CFLAGS) -c $< -o $@
@@ -46,7 +46,7 @@ fclean:		clean
 
 re:			fclean $(NAME)
 
-#bonus:		$(OBJS) $(BONUS OBJS)
-#			@ar rcs $(NAME) $(OBJS) $(BONUS OBJS)
+bonus:		$(OBJS) $(BONUS_OBJS)
+			@ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
 
-.PHONY:	all bonus clean re
+.PHONY:	all clean re
